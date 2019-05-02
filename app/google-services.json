@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1034851191384",
+    "firebase_url": "https://myapplication-74237.firebaseio.com",
+    "project_id": "myapplication-74237",
+    "storage_bucket": "myapplication-74237.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034851191384:android:a855766b8f112620",
+        "android_client_info": {
+          "package_name": "com.evolet.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034851191384-86uunus3sl36d3a6rfv0qigh1nlhv72n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.evolet.myapplication",
+            "certificate_hash": "ff255da11bfa6f212c7ce7c22780f6f208d407b1"
+          }
+        },
+        {
+          "client_id": "1034851191384-rjvs3ojs8mkmnqo3vdiqf850g5dvlmm4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8fOtNLqQETT6LZbDQl7wKRsx-fN94_IM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034851191384-rjvs3ojs8mkmnqo3vdiqf850g5dvlmm4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
