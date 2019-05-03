@@ -111,7 +111,7 @@ Button btnCart;
             mProductImage.setImageResource(R.drawable.medcine);
         }
         if (yCategory.equals("MediNeeds")) {
-            mProductImage.setImageResource(R.drawable.grocery);
+            mProductImage.setImageResource(R.drawable.medineeds);
         }
         if (yCategory.equals("Nursing")) {
             mProductImage.setImageResource(R.drawable.healthservice);

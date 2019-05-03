@@ -70,8 +70,8 @@ public class AdminItemAdapter extends RecyclerView.Adapter<AdminItemAdapter.MyVi
         mSqLiteHandler=new SQLiteHandler(mContext);
         prodImage.setImageResource(R.mipmap.ic_launcher);
         prodName.setText(materials.getProdName());
-        prodPrice.setText("Price: Rs."+materials.getProdPrice());
-        prodUnit.setText("Unit: "+materials.getUnit());
+      //  prodPrice.setText("Price: Rs."+materials.getProdPrice());
+        prodUnit.setText("Id: "+materials.getUnit());
         prodCategory.setText(materials.getProdCategory());
 
 

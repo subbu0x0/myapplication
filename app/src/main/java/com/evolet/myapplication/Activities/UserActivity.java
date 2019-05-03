@@ -24,7 +24,7 @@ public class UserActivity extends AppCompatActivity {
     private ViewPager viewPager;
     TextView addproductTv;
     //Fragments
-    ImageView mLogoutImageview,mNotificationImageview;View mCustomView;
+    ImageView mLogoutImageview,mNotificationImageview;View mCustomView,mCart;
     MedicinesFragment mMedicinesFragment;
     GroceryFragment mGroceryFragment;
     CareFragment mCareFragment;
@@ -37,11 +37,19 @@ public class UserActivity extends AppCompatActivity {
         viewPager.setOffscreenPageLimit(1);
         setupViewPager(viewPager);
         toolBar=findViewById(R.id.toolbar);
-        toolBar.setTitle("Lovecare - User");
+        toolBar.setTitle("EZcare - User");
         tabLayout =   findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
        // addproductTv=findViewById(R.id.addProductTextView);
         mLogoutImageview=(ImageView)findViewById(R.id.logout);
+        mCart = (ImageView)findViewById(R.id.cart_item_imagview2);
+        mCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),BillingActivity.class);
+                startActivity(i);
+            }
+        });
        //  addproductTv=findViewById(R.id.addProductTextView);
         mLogoutImageview.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -57,32 +57,21 @@
                     app:layout_constraintTop_toTopOf="@+id/prodImage" />
 
                 <TextView
-                    android:id="@+id/prodPricePerUnit"
-                    android:layout_width="37dp"
-                    android:layout_height="24dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/cabin_medium"
-                    android:text="250"
-                    android:textColor="@color/green"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/prodName"
-                    app:layout_constraintTop_toBottomOf="@+id/prodName" />
-
-                <TextView
                     android:id="@+id/prodUnit"
                     android:layout_width="60dp"
                     android:layout_height="18dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginStart="147dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="68dp"
+                    android:layout_marginBottom="10dp"
                     android:fontFamily="@font/cabin_medium"
                     android:text="Rs / Unit"
                     android:textColor="@color/grey"
                     android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/prodPricePerUnit"
-                    tools:layout_editor_absoluteX="238dp" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/prodImage"
+                    app:layout_constraintTop_toBottomOf="@+id/prodName" />
 
                 <!--
                     <ImageView

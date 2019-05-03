@@ -48,14 +48,23 @@ SQLiteHandler mSqLiteHandler;
                     Toast.makeText(AddressActivity.this, "phone or address is empty", Toast.LENGTH_SHORT).show();
 
                 }else {
+                    if(mPhone.length()==10)
+                    {
 
-                    mSqLiteHandler.addUserDetail(mUser,mPhone,mAddress);
-                    invoice = findViewById(R.id.invoice);
-                    invoice.setVisibility(View.VISIBLE);
-                    saveAddress.setText("Check Out");
-                    mDeliveryDay.setText("Your order will deliver soon");
+
+                        mSqLiteHandler.addUserDetail(mUser, mPhone, mAddress);
+                        invoice = findViewById(R.id.invoice);
+                        invoice.setVisibility(View.VISIBLE);
+                        saveAddress.setText("Check Out");
+                        mDeliveryDay.setText("Your order will deliver soon");
                     /*Intent intent=new Intent(getApplicationContext(),BillingActivity.class);
                     startActivity(intent);*/
+                    }
+                    else
+                    {
+                        Toast.makeText(AddressActivity.this,"Phone number should have 10 digits "
+                        ,Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

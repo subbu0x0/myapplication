@@ -271,12 +271,18 @@ public void storeProductItem(){
 
     SimpleDateFormat currentTime=new SimpleDateFormat("HH:mm:ss a");
     saveCurrentTime=currentTime.format(mCalendar.getTime());
-    productRandomKey=saveCurrentDate+saveCurrentTime;
-
-        final StorageReference filePath=mImageReference.child(contentURI.getLastPathSegment()+productRandomKey+".jpg");
+   // productRandomKey=saveCurrentDate+saveCurrentTime;
+    productRandomKey=mName;
+      //final StorageReference filePath=mImageReference.child(contentURI.getLastPathSegment()+productRandomKey+".jpg");
+    final StorageReference filePath=mImageReference.child(mName);
 
         final UploadTask mUploadTask=filePath.putFile(contentURI);
-
+  /*  filePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+        @Override
+        public void onSuccess(Uri uri) {
+            downloadUrl = uri.toString();
+        }
+    });*/
         mUploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
@@ -297,15 +303,17 @@ public void storeProductItem(){
                                 throw task.getException();
 
                         }
-                        downloadUrl=filePath.getDownloadUrl().toString();
+                        //downloadUrl=filePath.getDownloadUrl().toString();
                         return filePath.getDownloadUrl();
+
 
                     }
                 }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                     @Override
                     public void onComplete(@NonNull Task<Uri> task) {
                         if (task.isSuccessful()){
-
+                            Uri d = task.getResult();
+                            downloadUrl = d.toString();
                             Toast.makeText(AddProduct.this, "Product Image success", Toast.LENGTH_SHORT).show();
                             saveProductInfoIntoDatabase();
                             mSqLiteHandler.addProducts(mName,mUnit,mPrice,mProductCategory);
@@ -315,6 +323,7 @@ public void storeProductItem(){
                 });
             }
         });
+
 
 }
 

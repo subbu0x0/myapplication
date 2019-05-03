@@ -2,6 +2,7 @@ package com.evolet.myapplication.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,8 +23,11 @@ import com.evolet.myapplication.Items.Materials;
 import com.evolet.myapplication.Items.ProductItem;
 import com.evolet.myapplication.R;
 import com.evolet.myapplication.db.SQLiteHandler;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +43,8 @@ public class ProductsFragment extends Fragment {
     ProductItem productItem;
     SQLiteHandler mDbHandler;
     ArrayList<ProductItem> appList;
+    ArrayList<String> url;
+    String u;
 
     public ProductsFragment() {
         // Required empty public constructor
@@ -63,6 +69,7 @@ public class ProductsFragment extends Fragment {
         try {
             mDbHandler = new SQLiteHandler(getActivity());
             appList = new ArrayList<>();
+            url = new ArrayList<>();
             appList = mDbHandler.getAppList();
             productItem = appList.get(0);
             String xName, xPrice, xCategory, xUnit;
@@ -77,8 +84,23 @@ public class ProductsFragment extends Fragment {
         } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
         }
+     /*   for(int i=0;i<appList.size();i++){
+            DatabaseReference ref = ProductsRef.child("Products").child(appList.get(0).getProdName())
+                    .child("mImage");
+            ref.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    u = dataSnapshot.getValue(String.class);
+                }
 
-        UserRcAdapter adapter = new UserRcAdapter(getActivity(), appList,mDbHandler);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+            url.add(u);
+        }*/
+        UserRcAdapter adapter = new UserRcAdapter(getActivity(), appList,mDbHandler/*,url*/);
         RecyclerView medicinesListView = view.findViewById(R.id.product_rc);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());

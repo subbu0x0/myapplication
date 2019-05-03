@@ -51,7 +51,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 				+ KEY_ID + " INTEGER PRIMARY KEY,"
 				+ MATERIAL_NAME + " TEXT NOT NULL UNIQUE,"
 				+ MATERIAL_UNIT + " TEXT NOT NULL UNIQUE,"
-				+ MATERIAL_PRICE + " TEXT,"
+				+ MATERIAL_PRICE + " TEXT NOT NULL,"
 				+ MATERIAL_CATEGORY +" TEXT" + ")";
 		db.execSQL(CREATE_LOGIN_TABLE);
 

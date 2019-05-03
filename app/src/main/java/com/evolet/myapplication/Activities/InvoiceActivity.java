@@ -31,6 +31,8 @@ public class InvoiceActivity extends AppCompatActivity {
         address = findViewById(R.id.address);
         date = findViewById(R.id.date);
         tp = findViewById(R.id.tp);
+        Toolbar toolBar=findViewById(R.id.toolbar);
+        toolBar.setTitle("Invoice");
         Bundle b = getIntent().getExtras();
         String n,p,add,total;
         n = b.getString("name");
