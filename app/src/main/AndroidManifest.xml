@@ -9,15 +9,22 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/download"
         android:label="EZcare"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/download"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CredentialActivities.RegisterUser"></activity>
+        <activity android:name=".CredentialActivities.Registration" />
+        <activity android:name=".CredentialActivities.ForgotPassword" />
+        <activity
+            android:name=".Activities.MainActivity"
+            android:label="Ezcare"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.InvoiceActivity"
             android:label="@string/title_activity_invoice"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.ItemActivity" />
         <!--
         <activity

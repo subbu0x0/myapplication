@@ -253,7 +253,7 @@ public class AddProduct extends AppCompatActivity implements AdapterView.OnItemS
         }else if (TextUtils.isEmpty(mPrice)){
             Toast.makeText(this, "Product Price is empty", Toast.LENGTH_SHORT).show();
         }else if (TextUtils.isEmpty(mUnit)){
-            Toast.makeText(this, "Product Unit is empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Product/Service Id is empty", Toast.LENGTH_SHORT).show();
         }else {
             storeProductItem();
         }

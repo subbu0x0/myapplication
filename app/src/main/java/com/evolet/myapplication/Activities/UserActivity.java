@@ -28,7 +28,7 @@ public class UserActivity extends AppCompatActivity {
     MedicinesFragment mMedicinesFragment;
     GroceryFragment mGroceryFragment;
     CareFragment mCareFragment;
-    String[] tabTitle={"Medicines","MediNeeds","service"};
+    String[] tabTitle={"Medicines","MediNeeds","Nursing"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

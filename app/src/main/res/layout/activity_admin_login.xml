@@ -41,25 +41,35 @@
             android:inputType="textPassword"
             android:id="@+id/password"/>
     </android.support.design.widget.TextInputLayout>
+
     <LinearLayout
-        android:gravity="center"
-        android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
         <Button
-            android:layout_margin="10dp"
-            android:background="@color/white"
+            android:id="@+id/login"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="login"
-            android:id="@+id/login"/>
-        <Button
             android:layout_margin="10dp"
             android:background="@color/white"
-            android:layout_width="100dp"
+            android:text="login" />
+
+        <TextView
+            android:id="@+id/registration"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="register"
-            android:id="@+id/registration"/>
+            android:layout_margin="10dp"
+            android:text="New User? Register here" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/fp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Forgot Password" />
 </LinearLayout>

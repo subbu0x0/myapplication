@@ -59,7 +59,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 		String CREATE_CART_TABLE = "CREATE TABLE " + TABLE_CART + "("
 				+ KEY_ID + " INTEGER PRIMARY KEY,"
 				+ MATERIAL_NAME + " TEXT NOT NULL UNIQUE,"
-				+ MATERIAL_UNIT + " INTEGER,"
+				+ MATERIAL_UNIT + " INTEGER NOT NULL UNIQUE,"
 				+ MATERIAL_PRICE + " INTEGER,"
 				+ MATERIAL_CATEGORY +" TEXT" + ")";
 		db.execSQL(CREATE_CART_TABLE);
