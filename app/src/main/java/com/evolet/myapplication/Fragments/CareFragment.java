@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.evolet.myapplication.Activities.ItemActivity;
+import com.evolet.myapplication.Activities.NursingActivity;
 import com.evolet.myapplication.Adapters.AdminItemAdapter;
 import com.evolet.myapplication.Adapters.RecyclerItemClickListener;
 import com.evolet.myapplication.Adapters.UserAdapter;
@@ -99,11 +100,19 @@ public class CareFragment extends Fragment {
                 new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
                         // do whatever
-                        Intent i=new Intent(getActivity(),ItemActivity.class);
+                       /* Intent i=new Intent(getActivity(),ItemActivity.class);
                         String name = appList.get(position).getProdName();
                         Toast.makeText(getActivity(), ""+name, Toast.LENGTH_SHORT).show();
                         i.putExtra("ProdName",name);
-                        startActivity(i);
+                        startActivity(i);*/
+                       Intent i = new Intent(getActivity(), NursingActivity.class);
+                       String name = appList.get(position).getProdName();
+                       String price  = appList.get(position).getProdPrice();
+                       Bundle b = new Bundle();
+                       b.putString("ProdName",name);
+                       b.putString("ProdPrice",price);
+                       i.putExtras(b);
+                       startActivity(i);
                     }
 
                     @Override public void onLongItemClick(View view, int position) {

@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.evolet.myapplication.Adapters.ViewPagerAdapter;
 import com.evolet.myapplication.Fragments.CareFragment;
@@ -29,7 +30,7 @@ public class AdminActivity extends AppCompatActivity {
     private ViewPager viewPager;
     TextView addproductTv;
     //Fragments
-    ImageView mLogoutImageview,mNotificationImageview;View mCustomView;
+    ImageView mLogoutImageview,mNotificationImageview,iv;View mCustomView;
     ProductsFragment mProductsFragment;
     GroceryFragment mGroceryFragment;
     CareFragment mCareFragment;
@@ -49,7 +50,16 @@ public class AdminActivity extends AppCompatActivity {
         addproductTv=findViewById(R.id.addProductTextView);
         mLogoutImageview=(ImageView)findViewById(R.id.logout);
         mNotificationImageview=(ImageView)findViewById(R.id.notification_badge) ;
-        addproductTv=findViewById(R.id.addProductTextView);
+        iv = findViewById(R.id.ser);
+        iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // Toast.makeText(getApplicationContext(),"button click",Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getApplicationContext(),RequestsActivity.class);
+                startActivity(i);
+            }
+        });
+       // addproductTv=findViewById(R.id.addProductTextView);
         mLogoutImageview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
